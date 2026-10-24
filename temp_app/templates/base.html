@@ -1,0 +1,37 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}My Space{% endblock %}</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="{% url 'info' %}" class="logo">
+            MY<span>SPACE</span>
+        </a>
+
+        <div class="nav-links">
+            <a href="{% url 'info' %}">About Me</a>
+            <a href="{% url 'hobbies' %}">My Hobbies</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer class="footer">
+        <p>Designed with 💜 by Ilia</p>
+        <p class="footer-small">My Space © 2026</p>
+    </footer>
+
+</body>
+</html>

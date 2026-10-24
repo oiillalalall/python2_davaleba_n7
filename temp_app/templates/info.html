@@ -1,0 +1,68 @@
+
+{% extends "base.html" %}
+
+{% block title %}About Me | My Space{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+    <div class="hero-badge">
+        <span class="status-dot"></span>
+        FUTURE DEVELOPER
+    </div>
+
+    <h1>Hello, I'm <span>{{ first_name }}</span></h1>
+
+    <p class="hero-description">
+        Welcome to my personal space. This is where
+        I share my story, interests and goals.
+    </p>
+
+    <a href="{% url 'hobbies' %}" class="button">
+        Explore my hobbies <span>→</span>
+    </a>
+</section>
+
+<section class="section">
+    <div class="section-heading">
+        <p class="eyebrow">GET TO KNOW ME</p>
+        <h2>About <span>Me.</span></h2>
+        <p class="section-description">
+            A little information about who I am.
+        </p>
+    </div>
+
+    <div class="info-grid">
+
+        <div class="info-card">
+            <div class="card-icon">👤</div>
+            <p class="card-label">FULL NAME</p>
+            <h3>{{ name }} {{ surname }}</h3>
+        </div>
+
+        <div class="info-card">
+            <div class="card-icon">🎂</div>
+            <p class="card-label">AGE</p>
+            <h3>{{ age }} years old</h3>
+        </div>
+
+        <div class="info-card">
+            <div class="card-icon">📏</div>
+            <p class="card-label">HEIGHT</p>
+            <h3>{{ height }}</h3>
+        </div>
+
+
+        <div class="info-card wide-card">
+            <div class="card-icon">🚀</div>
+            <p class="card-label">MY GOAL</p>
+            <h3>{{ profession }}</h3>
+            <p class="card-description">
+                Learning, building projects and improving every day.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

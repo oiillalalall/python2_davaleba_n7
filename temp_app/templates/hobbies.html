@@ -1,0 +1,62 @@
+
+{% extends "base.html" %}
+
+{% block title %}My Hobbies | My Space{% endblock %}
+
+{% block content %}
+
+<section class="hero hobbies-hero">
+    <div class="hero-badge">
+        ✦ LIFE OUTSIDE THE CLASSROOM
+    </div>
+
+    <h1>Things I <span>Love.</span></h1>
+
+    <p class="hero-description">
+        My interests, passions and the things that
+        help me grow every day.
+    </p>
+</section>
+
+<section class="section">
+    <div class="section-heading">
+        <p class="eyebrow">MY INTERESTS</p>
+        <h2>My <span>Hobbies.</span></h2>
+    </div>
+
+    <div class="hobbies-grid">
+
+        {% for hobby in hobbies %}
+        <div class="hobby-card">
+            <div class="hobby-number">
+                {% if forloop.counter < 10 %}0{% endif %}{{ forloop.counter }}
+            </div>
+
+            <h3>{{ hobby }}</h3>
+            <span class="hobby-arrow">↗</span>
+        </div>
+        {% empty %}
+        <p>No hobbies added yet.</p>
+        {% endfor %}
+
+    </div>
+
+    <div class="grade-card">
+        <div>
+            <p class="eyebrow">EDUCATION STATUS</p>
+            <h2>My academic journey</h2>
+        </div>
+
+        <div class="grade-status">
+            {% if grade == 12 %}
+                <span class="grade-tag">🎓 აბიტურიენტი</span>
+                <p>მიზნისკენ მიმავალი ბოლო სასკოლო ეტაპი!</p>
+            {% else %}
+                <span class="grade-tag">📚 მოსწავლე</span>
+                <p>მომავალი აბიტურიენტი</p>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+{% endblock %}
